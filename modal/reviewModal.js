@@ -4,6 +4,9 @@ const reviewSchema =mongoose.Schema({
     comment:{
         type: String,
     },
+    name:{
+        type: String,
+    },
     rating: {
         type: Number,
     },

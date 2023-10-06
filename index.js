@@ -15,6 +15,9 @@ app.use('/api/bookings', require('./routes/bookingsRoutes'))
 app.use('/api/user', require('./routes/userRoutes'))
 app.use('/', require('./routes/PaymentRoutes'))
 app.use('/api/review', require('./routes/reviewRoutes'))
+app.get('/', (req,res) =>{
+    res.send("pronob")
+})
 // app.use('/api/tools', (res,req) =>{
 //     res.send("hellow")
 // })
