@@ -11,7 +11,7 @@ const setUser =async(req, res) => {
         //   },process.env.JWT_SEC,
         //   {expiresIn:"3d"}
         //   );
-        const token =jwt.sign({ email:exist.email,admin:exist.admin }, "shhh", { expiresIn: '3d' })
+        const token =jwt.sign({ email:exist.email,admin:exist.admin },process.env.JWT_SECRET, { expiresIn: '3d' })
         return  res.status(400).json({exist,token})
     }
     else{
@@ -19,7 +19,7 @@ const setUser =async(req, res) => {
         const newPost = new User(email);
     try {
       const savedPost = await newPost.save();
-      const token =jwt.sign({ email: savedPost.email,admin:savedPost.admin }, "shhh", { expiresIn: '3d' })
+      const token =jwt.sign({ email: savedPost.email,admin:savedPost.admin }, process.env.JWT_SECRET, { expiresIn: '3d' })
       return  res.status(200).json({savedPost,token});
     } catch (err) {
       return res.status(403).json(err);

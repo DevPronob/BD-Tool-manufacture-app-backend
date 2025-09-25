@@ -1,4 +1,4 @@
-const stripe = require('stripe')("sk_test_51HVdTWBLa4QtAMbznzEswTignv3iL3yWJnOkMj93jdiTl4e9zU2JQscuIEp9WgWM4CigxRHTbvVD894kZxxCnPiI008fkwqrcF")
+const stripe = require('stripe')(process.env.STRIPE_API)
 const Payment = require('../modal/paymentModal');
 //   // create payment intent
 //   app.post('/create-payment-intent', verifyJWT, async (req, res) => {
