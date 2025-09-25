@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 const connectDB =require('./database/db')
 
-app.listen(process.env.PORT,() =>{
+app.listen(5000,() =>{
     console.log("Server is running")
 })
 
@@ -18,9 +18,9 @@ app.use('/api/review', require('./routes/reviewRoutes'))
 app.get('/', (req,res) =>{
     res.send("pronob")
 })
-// app.use('/api/tools', (res,req) =>{
-//     res.send("hellow")
-// })
+app.use('/api/tools', (res,req) =>{
+    res.send("hellow")
+})
 // app.use('/api/user', require('./routes/userRoutes'))
 // Yk8AA6lpYuxEYaGV
 // pronob

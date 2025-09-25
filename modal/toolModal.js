@@ -6,8 +6,12 @@ const toolSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: String, // You might want to use a numeric type like Number for price
+        type: String, 
         required: true
+    },
+     featured: {
+        type: Boolean,
+        default: false
     },
     description: {
         type: String,
